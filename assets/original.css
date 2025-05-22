@@ -11,6 +11,14 @@ body {
   color: #c9d1d9;
 }
 
+.title {
+    display: inline-block;
+}
+
+nav {
+    float: right;
+}
+
 h1,
 h2,
 h3,

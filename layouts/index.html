@@ -1,3 +1,7 @@
 {{ define "main" }}
-{{ .Content }}
+    {{ with .Site.GetPage "/pages" }}
+        {{ with .GetPage "start.md" }}
+            {{ .Content }}
+        {{ end }}
+    {{ end }}
 {{ end }}

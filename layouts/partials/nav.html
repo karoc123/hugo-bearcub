@@ -1,7 +1,8 @@
-{{ range .Site.Menus.main.ByWeight }}
-  <a href="{{ .URL }}">{{ .Name }}</a>
+{{- $menuLength := len .Site.Menus.main.ByWeight -}}
+{{- range $i, $item := .Site.Menus.main.ByWeight -}}
+<a href="{{ $item.URL }}">{{ $item.Name }}</a>{{ if ne $i (sub $menuLength 1) }}<span>&verbar;</span>{{ end }}
 {{ end }}
-<a href='{{ absURL "index.xml" }}'>RSS</a>
+<!-- <a href='{{ absURL "index.xml" }}'>RSS</a> -->
 
 <!-- Convert this page's translations into a dict -->
 {{ $translations := dict }}
